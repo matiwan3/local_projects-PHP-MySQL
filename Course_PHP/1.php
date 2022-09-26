@@ -8,10 +8,10 @@
     <title>PHP COURSE</title>
     
 </head>
-<body>
+    <body>
+        
     <!-- http://localhost:4000/Desktop/projekty/sql%20php/Course_PHP/1.php -->
-    <?php 
-        // 1
+        <!-- // 1
         // echo("<h1>Mateusz W</h1>");
         // echo("<hr>");
         // echo("<p>This is my site</p>");
@@ -55,25 +55,21 @@
         // echo "<br>";
         // echo  sqrt(36);
         // echo "<br>";
-        // echo max(2,10) //min; round; ceil; floor;
+        // echo max(2,10) //min; round; ceil; floor; ?>-->
 
-        ?>
-
-         <!-- 6 Getting the input -->
         <form action="1.php" method="get">
-            Name: <input type="text" name="firs_name">
-            email: <input type="text" name="email">
-            password: <input type="text" name="password">
+            Name: <input type="text" name="name"> <br>
             <input type="submit">
-        </form>
-        <br>
+        <br><br>
+
         <?php 
-        echo $_GET["firs_name"];
-        echo "<br>";
-        echo $_GET["email"];
-        echo "<br>";
-        echo $_GET["password"];
+            error_reporting(E_ERROR | E_PARSE);
+            echo $_GET["age"]
         
         ?>
-</body>
+
+
+
+
+    </body>
 </html>
