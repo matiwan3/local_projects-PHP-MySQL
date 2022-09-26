@@ -19,7 +19,6 @@
         // 2 Variables
         // $characterName = 'Tom';
         // $characterAge =  80;
-
         // echo "<h1>Simple Story</h1>";
         // echo "There once was a man named $characterName <br>";
         // echo "He was $characterAge years old <br>";
@@ -35,16 +34,46 @@
         // echo $phrase;
 
         // 4 Working with strings
-        $phrase = "Giraffe Academy";
+        // $phrase = "Giraffe Academy";
+        // echo str_replace("Giraffe", "Panda", $phrase);
+        // echo substr($phrase, 8, 3);
         // echo strlen($phrase);
-        echo $phrase[0];
+        // $phrase[0] = 'B';
+        // echo $phrase;
 
+        // 5 Working with numbers
+        // echo -40.787;
+        // echo round(5 / 9);
+        // echo 10 % 3;
+        // echo "<br>";
+        // $equation = 4 + 5 * 10;
+        // $equation++;
+        // echo $equation;
+        // echo abs(-100);
+        // echo "<br>";
+        // echo pow(99,2);
+        // echo "<br>";
+        // echo  sqrt(36);
+        // echo "<br>";
+        // echo max(2,10) //min; round; ceil; floor;
 
+        ?>
 
-
-
-
-
-    ?>
+         <!-- 6 Getting the input -->
+        <form action="1.php" method="get">
+            Name: <input type="text" name="firs_name">
+            email: <input type="text" name="email">
+            password: <input type="text" name="password">
+            <input type="submit">
+        </form>
+        <br>
+        <?php 
+        echo $_GET["firs_name"];
+        echo "<br>";
+        echo $_GET["email"];
+        echo "<br>";
+        echo $_GET["password"];
+        
+        ?>
 </body>
 </html>
