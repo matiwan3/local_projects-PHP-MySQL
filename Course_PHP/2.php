@@ -50,16 +50,57 @@
         <input type="submit">
         </form>
         <br><br>
+         -->
         
-        <?php 
+        <!-- <?php 
             $color = $_GET["color"];
             $PluralNoun = $_GET["PluralNoun"];
             $Celebrity = $_GET["Celebrity"];
 
             echo "Roses are $color <br>";
             echo "$PluralNoun are blue <br>";
-            echo "I love you $Celebrity <br>";
+            echo "I love you $Celebrity <br>";?>
+        <form action="1.php" method="get">
+            Name: <input type="text" name="name"> <br>
+            <input type="submit">
+        <br><br>
+
+        <?php 
+            error_reporting(E_ERROR | E_PARSE);
+            echo $_GET["age"]
+        
         ?> -->
+        <!-- 9 POST VS GET -->
+        <!-- <form action="1.php" method="post">
+            Password: <input type="password" name="password"> <br>
+            <input type="submit">
+        <br><br>
+        <?php 
+            error_reporting(E_ERROR | E_PARSE);
+            echo $_POST["password"];
+        ?> -->
+
+        <!-- Arrays -->
+        <?php 
+        error_reporting(E_ERROR | E_PARSE);
+        $friends = array("Kevin",1,false,"Karen","Oscar","Jim");
+        // $friends[6] = "Dwight";
+        // echo $friends[6];
+        echo count($friends)
+?>
+        <!-- Using checkboxes -->
+        <!-- <form action="1.php" method="post">
+            Apples: <input type="checkbox" name="fruits[]" value="apples"><br>
+            Oranges: <input type="checkbox" name="fruits[]" value="oranges"><br>
+            Pears: <input type="checkbox" name="fruits[]" value="ears"><br>
+            <input type="submit">
+        </form>
+        
+        <?php 
+        $fruits = $_POST['fruits'];
+        echo $fruits[0];
+        ?> -->
+
 
 </body>
 </html>
