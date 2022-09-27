@@ -7,6 +7,53 @@
     <title>Course cd</title>
 </head>
 <body>
+            
+    <!-- http://localhost:4000/Desktop/projekty/sql%20php/Course_PHP/1.php -->
+        <!-- // 1
+        // echo("<h1>Mateusz W</h1>");
+        // echo("<hr>");
+        // echo("<p>This is my site</p>");
+
+        // 2 Variables
+        // $characterName = 'Tom';
+        // $characterAge =  80;
+        // echo "<h1>Simple Story</h1>";
+        // echo "There once was a man named $characterName <br>";
+        // echo "He was $characterAge years old <br>";
+        // // $characterName = 'Mike';
+        // echo "He really liked the name $characterName <br>";
+        // echo "But didn't like being $characterAge <br>";
+        
+        // 3 Data types
+        // $phrase = "To be or not to be";
+        // $age = 30;
+        // $gpa = 32.54363;
+        // $isMale = true;
+        // echo $phrase;
+
+        // 4 Working with strings
+        // $phrase = "Giraffe Academy";
+        // echo str_replace("Giraffe", "Panda", $phrase);
+        // echo substr($phrase, 8, 3);
+        // echo strlen($phrase);
+        // $phrase[0] = 'B';
+        // echo $phrase;
+
+        // 5 Working with numbers
+        // echo -40.787;
+        // echo round(5 / 9);
+        // echo 10 % 3;
+        // echo "<br>";
+        // $equation = 4 + 5 * 10;
+        // $equation++;
+        // echo $equation;
+        // echo abs(-100);
+        // echo "<br>";
+        // echo pow(99,2);
+        // echo "<br>";
+        // echo  sqrt(36);
+        // echo "<br>";
+        // echo max(2,10) //min; round; ceil; floor; ?>-->
         <!-- 6 Getting the input -->
         <!-- <form action="1.php" method="get">
             Name: <input type="text" name="firs_name">
@@ -88,7 +135,7 @@
         // echo $friends[6];
         echo count($friends)
 ?>
-        <!-- Using checkboxes -->
+        <!-- 10 Using checkboxes -->
         <!-- <form action="1.php" method="post">
             Apples: <input type="checkbox" name="fruits[]" value="apples"><br>
             Oranges: <input type="checkbox" name="fruits[]" value="oranges"><br>
@@ -100,7 +147,129 @@
         $fruits = $_POST['fruits'];
         echo $fruits[0];
         ?> -->
+        <!-- 11 Associative arrays -->
+        <!-- <form action="1.php" method="post">
+            <input type="text" name="student">
+            <input type="submit">
+        </form>
+        <?php 
+            $grades = array("Jim"=>"A+","Pam"=>"B-", "Oscar"=>"C+");
+            // $grades["Jim"] = "F";
+            echo $grades[$_POST["student"]];
+        ?> -->
+        <!-- 12 Functions -->
+        <!-- <?php 
+            function sayHi($name, $age){
 
+                echo "Hello $name,your age is $age <br>";
+            }
+            sayHi('Mateusz',40);
+            sayHi('Jan',35);
+            sayHi('Oscar',12);
+            sayHi('Dave',90);
+        ?> -->
+            <!-- 13 Return function -->
+            <?php 
+            function cube($num){
+                return $num * $num * $num;
+            }
+            echo cube(4);
+        ?>
+        <?php 
+         $isMale = true;
+         $isTall = true;
+         if ($isMale && $isTall) {
+            echo "You are a tall male";
+         } 
+         elseif ($isMale && !$isTall){
+            echo "You are a short male";
+         }
+         elseif (!$isMale && $isTall){
+            echo "You are not a male but tall";
+         }
+         else{
+            echo "You are not a tall and not a male";
+         }
+         ?>
+        <?php 
+        function getMax($num1, $num2,$num3){
+            if($num1 >= $num2 && $num1 >= $num3){
+                return $num1;
+            }
+            else if($num2 >= $num1 && $num2 >- $num3){
+                return $num2;
+            }
+            else{
+                return $num3;
+            }
+        }
+        echo getMax(300,900,400)
+        ?>
+        <form action="1.php" method="post">
+            First Num: <input type="number" name="num1"><br>
+            OP: <input type="textbox" name="op"><br>
+            Second Num: <input type="text" name="num2"><br>
+            <input type="submit">
+        </form>
 
+        <?php 
+        $num1 = $_POST["num1"];
+        $num2 = $_POST["num2"];
+        $op = $_POST["op"];
+
+        if($op == "+"){
+            echo $num1 + $num2;
+        } 
+        elseif($op == "-"){
+            echo $num1 - $num2;
+        } 
+        elseif($op == "*"){
+            echo $num1 * $num2;
+        } 
+        elseif($op == "/"){
+            echo $num1 / $num2;
+        } 
+        else{
+            echo "Invalid Operator";
+        }
+        ?>
+            <!-- Switch statement -->
+    <form action="1.php" method="post">
+        What was your grade?
+        <input type="text" name="grade">
+        <input type="submit">
+    </form>
+    <?php 
+    $grade = $_POST["grade"];
+    switch($grade){
+        case "A":
+            echo "You did amazing!";
+            break;
+        case "B":
+            echo "You did pretty good!";
+            break;
+        case "C":
+            echo "You did poorly";
+            break;
+        case "D":
+            echo "You did very bad";
+            break;
+        case "F":
+            echo "You Fail!";
+            break;
+        default:
+            echo "invalid grade";
+            break;
+    }   
+    ?>
+    <!-- While loops -->
+    <?php 
+    $index = 6;
+    do{
+        echo "$index <br>";
+        $index++;
+    }while($index <=5);
+    // reversed loop first do the stuff then check the conditions
+    ?>
 </body>
 </html>

@@ -9,16 +9,13 @@
     
 </head>
     <body>
-        <!-- 12 Functions -->
         <?php 
-            function sayHi($name){
+            $index = 1;
+            
 
-                echo "Hello $name";
-            }
-            sayHi('Mateusz');
+
+
+
         ?>
-
-
-
     </body>
 </html>
