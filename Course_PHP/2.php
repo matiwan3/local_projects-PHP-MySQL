@@ -271,5 +271,122 @@
     }while($index <=5);
     // reversed loop first do the stuff then check the conditions
     ?>
+    <?php 
+    $luckyNumbers = array(4, 8, 14, 16, 23, 42);
+
+    for($i = 0; $i < count($luckyNumbers); $i++){
+        echo "$luckyNumbers[$i] <br>"; 
+    }
+    ?>
+    <!-- Including HTML-->
+    <?php include "header.html" ?>
+    <p>Hello</p>
+    <?php include "footer.html" ?>
+
+    <?php 
+    $wordCount = 400;
+    $author = "Mike";
+    $title = "My First Post";
+    include "article-header.php" 
+    ?>
+    <!-- Classes and objecst -->
+    <?php 
+    class Book {
+        var $title;
+        var $author;
+        var $pages;
+    } 
+
+    $book1 = new Book; //object instance of a class
+    $book1 -> title ="Harry Potter";
+    $book1->author =" JK Rowling";
+    $book1->pages = 400;
+
+    echo $book1->author;
+
+    $book2 = new Book; //object instance of a class
+    $book2 -> title = "Lord Of the Rings";
+    $book2->author = "Tolkien";
+    $book2->pages = 400;
+
+    echo $book2->author;
+    ?>
+        <!-- Constructors -->
+
+    <?php 
+        class Book {
+            var $title;
+            var $author;
+            var $pages;
+
+            function __construct($aTitle, $aAuthor, $aPages){
+                $this-> title = $aTitle;
+                $this-> author = $aAuthor;
+                $this-> pages = $aPages;
+            }
+        }
+    $book1 = new Book("Harry Potter","JK Rowling",400); //object instance of a class
+    $book1-> title = "Hunger Games";
+    $book2 = new Book("Lord Of the Rings","Tolkien",400); //object instance of a class
+
+    echo $book1 ->title;
+    ?>
+        <!-- Object Functions -->
+        <?php 
+            class Student {
+        var $name;
+        var $major;
+        var $gpa;
+
+        function __construct($name, $major, $gpa){
+            $this->name = $name;
+            $this->major = $major;
+            $this->gpa = $gpa;
+        }
+        function hasHonors(){
+            if($this->gpa >= 3.5){
+                return "true";
+            }
+            return "false";
+        }
+    }
+
+    $student1 = new Student("Jim", "Buisness", 2.8);
+    $student2 = new Student("Pam", "Art", 3.6);
+    
+    echo $student1->hasHonors();
+    echo "<br>";
+    echo $student2->hasHonors();
+    ?>
+    <?php 
+        class Movie {
+            public $title;
+            private $rating;
+            
+            function __construct($title, $rating){
+                $this->title = $title;
+                $this->setRating($rating);
+            }
+            
+            function getRating(){
+                return $this->rating;
+            }
+
+            function setRating($rating){
+                if($rating == "G" || $rating == "PG" || $rating == "PG-13" || $rating == "R" || $rating == "NR"){
+                    echo $rating;
+
+                }
+                else{
+                    $this->rating = "NR";
+                }
+            }
+        }
+        
+        $avengers = new Movie("Avengers", "Dog");
+        // G, PG, PG-13, R, NR
+
+        echo $avengers->getRating();
+    ?>
 </body>
 </html>
