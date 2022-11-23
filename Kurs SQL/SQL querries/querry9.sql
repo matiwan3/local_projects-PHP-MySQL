@@ -1,0 +1,9 @@
+SELECT * FROM produkty;
+-- CREATE TABLE produkty ...
+-- ALTER TABLE produkty ...
+-- INSERT INTO produkty ...
+SELECT AVG(cena) AS srednia FROM produkty;
+
+SELECT id_produktu, model, cena FROM produkty WHERE cena > (SELECT AVG(cena) FROM produkty) ORDER BY cena DESC; # podzapytanie w celu uzyskania dynamicznej sredniej
+SELECT id_produktu, model, cena FROM produkty WHERE cena > (SELECT cena FROM produkty WHERE id_produktu = 1) ORDER BY cena DESC;
+SELECT model FROM (SELECT * FROM produkty) AS produkty;  # podzapytanie powinno mieć alias AS
